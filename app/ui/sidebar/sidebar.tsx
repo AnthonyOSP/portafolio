@@ -1,0 +1,111 @@
+import Image from "next/image"
+import styles from './sidebar.module.css'
+import { ChevronDownIcon, EnvelopeIcon, DevicePhoneMobileIcon, CalendarDaysIcon, MapPinIcon } from '@heroicons/react/24/outline'
+
+export default function sidebar() {
+    return (
+        <>
+            <aside className={styles.sidebar} data-sidebar>
+                <div className={styles.sidebarInfo}>
+                    <figure className={styles.avatarBox}>
+                        <Image
+                            src="/images/dev-portafolio1.png"
+                            alt="Richard hanrick"
+                            width="70"
+                            height="70"
+                        />
+                    </figure>
+
+                    <div className={styles.infoContent}>
+                        <h1 className={styles.name} title="Anthony Saavedra">
+                            Anthony Saavedra
+                        </h1>
+
+                        <p className={styles.title}>Web developer</p>
+                    </div>
+
+                    <button className={styles.infoMoreBtn} data-sidebar-btn>
+                        <span>Show Contacts</span>
+                        <ChevronDownIcon className="size-3"/>
+                    </button>
+                </div>
+
+                <div className={styles.sidebarInfoMore}>
+                    <div className={styles.separator}></div>
+                    <ul className={styles.contactsList}>
+                        <li className={styles.contactItem}>
+                            <div className={styles.iconBox}>
+                                <EnvelopeIcon className="size-6"/>
+                            </div>
+
+                            <div className={styles.contactInfo}>
+                                <p className={styles.contactTitle}>Email</p>
+
+                                <a href="mailto:anthony@example.com" className={styles.contactLink}>
+                                    anthony@example.com
+                                </a>
+                            </div>
+                        </li>
+
+                        <li className={styles.contactItem}>
+                            <div className={styles.iconBox}>
+                                <DevicePhoneMobileIcon className="size-6" />
+                            </div>
+
+                            <div className={styles.contactInfo}>
+                                <p className={styles.contactTitle}>Phone</p>
+
+                                <a href="tel:+51 953727689" className={styles.contactLink}>
+                                    +51 953 727 689
+                                </a>
+                            </div>
+                        </li>
+
+                        <li className={styles.contactItem}>
+                            <div className={styles.iconBox}>
+                                <CalendarDaysIcon className="size-6" />
+                            </div>
+
+                            <div className={styles.contactInfo}>
+                                <p className={styles.contactTitle}>Birthday</p>
+
+                                <time dateTime="1982-06-23">June 23, 1982</time>
+                            </div>
+                        </li>
+
+                        <li className={styles.contactItem}>
+                            <div className={styles.iconBox}>
+                                <MapPinIcon className="size-6" />
+                            </div>
+
+                            <div className={styles.contactInfo}>
+                                <p className={styles.contactTitle}>Location</p>
+
+                                <address>Lima, Perú</address>
+                            </div>
+                        </li>
+                        <li className={styles.contactItem}>
+                            <div className={styles.iconBox}>
+                                <Image
+                                    src="/images/logo-github.svg"
+                                    alt="Richard hanrick"
+                                    width="80"
+                                    height="80"
+                                    className="size-6"
+                                />
+                            </div>
+
+                            <div className={styles.contactInfo}>
+                                <p className={styles.contactTitle}>GitHub</p>
+
+                                <p>AnthonySP</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div className={styles.separator}></div>
+                </div>
+            </aside>
+        </>
+    )
+}
