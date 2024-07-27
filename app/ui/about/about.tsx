@@ -11,8 +11,8 @@ export default function about() {
             </header>
 
             <section className="about-text text-[#D6D6D6] text-[14px] font-light leading-[1.6rem]">
-                <p className='mb-[15px]'>
-                    I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.
+                <p className="mb-[15px]">
+                    I&apos;m Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.
                     I enjoy
                     turning complex problems into simple, beautiful and intuitive designs.
                 </p>
@@ -28,7 +28,7 @@ export default function about() {
 
             <section className="service mb-9">
 
-                <h3 className="h3 service-title mb-5">What i'm doing</h3>
+                <h3 className="h3 service-title mb-5">What i&apos;m doing</h3>
 
                 <ul className="service-list grid grid-cols-2 gap-5">
 
@@ -258,7 +258,7 @@ export default function about() {
                             <img src="./images/avatar-1.png" alt="Daniel lewis" width="80" className="hidden" data-modal-img />
                         </figure>
 
-                        <img src="./images/icon-quote.svg" alt="quote icon" className='hidden' />
+                        <img src="./images/icon-quote.svg" alt="quote icon" className="hidden" />
                     </div>
 
                     <div className="modal-content">
