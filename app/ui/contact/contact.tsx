@@ -1,4 +1,5 @@
-import { PaperAirplaneIcon } from '@heroicons/react/24/outline'
+import { FaRegPaperPlane } from "react-icons/fa";
+
 
 export default function contact() {
     return (
@@ -29,7 +30,7 @@ export default function contact() {
                     <textarea name="message" className="form-input text-[#fafafa] text-[14px] font-normal py-[13px] px-5 border border-solid border-[#383838] rounded-[14px] outline-none min-h-[100px] h-[120px] max-h-[200px] resize-y mb-[25px] placeholder:font-medium  focus:border-[#ffdb70]" placeholder="Your Message" required data-form-input></textarea>
 
                     <button className="form-btn relative w-full bg-gradient-to-br from-[#404040] from-10% to-[#40404000] to-50% text-[#ffdb70] flex justify-center items-center gap-[10px] py-[13px] px-[20px] rounded-[14px] text-[14px] capitalize shadow-custom-shadow-3 z-[1] duration-300 ease-in" type="submit" disabled data-form-btn>
-                        <PaperAirplaneIcon className='w-[16px]'/>
+                        <FaRegPaperPlane className='w-[16px]'/>
                         <span className='font-semibold'>Send Message</span>
                     </button>
 

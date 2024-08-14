@@ -1,6 +1,8 @@
 import Image from "next/image"
 import styles from './sidebar.module.css'
 import { ChevronDownIcon, EnvelopeIcon, DevicePhoneMobileIcon, CalendarDaysIcon, MapPinIcon } from '@heroicons/react/24/outline'
+import { FaGithub } from "react-icons/fa";
+
 
 export default function sidebar() {
     return (
@@ -86,13 +88,7 @@ export default function sidebar() {
                         </li>
                         <li className={styles.contactItem}>
                             <div className={styles.iconBox}>
-                                <Image
-                                    src="/images/logo-github.svg"
-                                    alt="Richard hanrick"
-                                    width="80"
-                                    height="80"
-                                    className="size-6"
-                                />
+                            <FaGithub />
                             </div>
 
                             <div className={styles.contactInfo}>
