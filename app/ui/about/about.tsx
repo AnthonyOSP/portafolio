@@ -4,31 +4,26 @@ import Image from 'next/image'
 
 export default function about() {
     return (
-        <article className="about  active mb-3.5" data-page="about"  >
+        <article className="about  active " data-page="about"  >
 
             <header>
-                <h2 className="h2 article-title mb-3.5">About me </h2>
+                <h2 className="h2 article-title mb-3.5">¿Quien Soy? </h2>
             </header>
 
             <section className="about-text text-[#D6D6D6] text-[14px] font-light leading-[1.6rem]">
                 <p className="mb-[15px]">
-                    I&apos;m Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.
-                    I enjoy
-                    turning complex problems into simple, beautiful and intuitive designs.
+                    Amante del desarrollo de aplicaciones Web, con conocimientos sólidos en HTML, CSS y JavaScript, y experiencia en el uso
+                    de frameworks y librerías actuales como React y Node.js. También cuento con conocimientos en Back-End y Base de datos SQL.
                 </p>
 
                 <p className="mb-[15px]">
-                    My job is to build your website so that it is functional and user-friendly but at the same time attractive.
-                    Moreover, I
-                    add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring
-                    across your
-                    message and identity in the most creative way. I created web design for many famous brand companies.
+                    Entusiasta de las nuevas tecnologias y de alto rendimiento, con un fuerte enfoque en la experiencia del usuario y atención al detalle. Estoy en busca de oportunidades que me permitan aplicar y ampliar mis conocimientos en un entorno colaborativo y dinámico.
                 </p>
             </section>
 
             <section className="service mb-9">
 
-                <h3 className="h3 service-title mb-5">What i&apos;m doing</h3>
+                <h3 className="h3 service-title mb-5">¿Que es lo que hago?</h3>
 
                 <ul className="service-list grid grid-cols-2 gap-5">
 
@@ -36,19 +31,19 @@ export default function about() {
 
                         <div className="service-icon-box mb-2.5">
                             <Image
-                                src="/images/icon-design.svg"
-                                alt="esign icon"
-                                width="40"
-                                height="40"
+                                src="/images/DESIGN.png"
+                                alt="Design icon"
+                                width="70"
+                                height="70"
                                 className="m-auto"
                             />
                         </div>
 
                         <div className="service-content-box text-center">
-                            <h4 className="h4 service-item-title mb-[7px]">Web design</h4>
+                            <h4 className="h4 service-item-title mb-[7px]">Diseño Web</h4>
 
                             <p className="service-item-text text-[#d6d6d6] text-[14px] font-light leading-[1.6]">
-                                The most modern and high-quality design made at a professional level.
+                                El diseño más moderno y de mayor calidad realizado a nivel profesional.
                             </p>
                         </div>
 
@@ -58,19 +53,19 @@ export default function about() {
 
                         <div className="service-icon-box mb-2.5">
                             <Image
-                                src="/images/icon-dev.svg"
+                                src="/images/WEB.png"
                                 alt="Web development icon"
-                                width="40"
-                                height="40"
+                                width="70"
+                                height="70"
                                 className="m-auto"
                             />
                         </div>
 
                         <div className="service-content-box text-center">
-                            <h4 className="h4 service-item-title mb-[7px]">Web development</h4>
+                            <h4 className="h4 service-item-title mb-[7px]">Desarrollo web</h4>
 
                             <p className="service-item-text text-[#d6d6d6] text-[14px] font-light leading-[1.6]">
-                                High-quality development of sites at the professional level.
+                                Desarrollo de sitios de alta calidad a nivel profesional.
                             </p>
                         </div>
 
@@ -80,10 +75,10 @@ export default function about() {
 
                         <div className="service-icon-box mb-2.5">
                             <Image
-                                src="/images/icon-app.svg"
+                                src="/images/APP.png"
                                 alt="mobile app icon"
-                                width="40"
-                                height="40"
+                                width="70"
+                                height="70"
                                 className="m-auto"
                             />
                         </div>
@@ -92,7 +87,7 @@ export default function about() {
                             <h4 className="h4 service-item-title mb-[7px]">Mobile apps</h4>
 
                             <p className="service-item-text text-[#d6d6d6] text-[14px] font-light leading-[1.6]">
-                                Professional development of applications for iOS and Android.
+                                Desarrollo profesional de aplicaciones para iOS y Android con React Native.
                             </p>
                         </div>
 
@@ -102,10 +97,10 @@ export default function about() {
 
                         <div className="service-icon-box mb-2.5">
                             <Image
-                                src="/images/icon-photo.svg"
+                                src="/images/DB.png"
                                 alt="camera icon"
-                                width="40"
-                                height="40"
+                                width="70"
+                                height="70"
                                 className="m-auto"
                             />
                         </div>
@@ -119,6 +114,7 @@ export default function about() {
                         </div>
                     </li>
                 </ul>
+                <p className='text-[#fafafa] flex gap-1 text-[12px] mt-[10px] justify-end'>* Iconos gracias a <a target="_blank" href="https://icons8.com" className='text-white'>Icons8</a></p>
             </section>
 
             <section className="testimonials mb-[30px]">
@@ -250,7 +246,7 @@ export default function about() {
                 <section className="testimonials-modal bg-[#1e1e1f] relative p-[15px] my-[15px] mx-[12px] border-[1px] border-solid border-[#383838] rounded-[14px] shadow-[0_24px_80px_0px_rgba(0,0,0,0.25)] scale-125 opacity-[0] duration-500 ease-in-out z-[2]">
 
                     <button className="modal-close-btn absolute top-[15px] right-[15px] bg-[#2b2b2c] rounded-[8px] w-[32px] h-[32px] flex content-center items-center text-[#fafafa] text-[18px] opacity-70 hover:opacity-100 focus:opacity-100" data-modal-close-btn>
-                        <XMarkIcon  className="w-[50px]"/>
+                        <XMarkIcon className="w-[50px]" />
                     </button>
 
                     <div className="modal-img-wrapper">
@@ -283,51 +279,69 @@ export default function about() {
 
             </div>
 
-            <section className="clients mb-[15px]">
+            {/* <section className="clients mb-[15px]">
 
                 <h3 className="h3 clients-title">Clients</h3>
 
-                <ul className="clients-list has-scrollbar flex content-start items-start gap-[15px] my-[0px] mx-[-15px] p-[25px] pb-[25px] overflow-x-auto scroll-smooth overscroll-x-contain snap-mandatory scroll-ps-[25px]">
+                <ul className="e has-scrollbar flex content-start items-start gap-[15px] my-[0px] mx-[-15px] p-[25px] pb-[25px] overflow-x-auto scroll-smooth overscroll-x-contain snap-mandatory scroll-ps-[25px]">
 
                     <li className="clients-item min-w-[50%] snap-start">
                         <a href="#">
-                            <img src="./images/logo-1-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0"/>
+                            <img src="./images/logo-1-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0" />
                         </a>
                     </li>
 
                     <li className="clients-item min-w-[50%] snap-start">
                         <a href="#">
-                            <img src="./images/logo-2-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0"/>
+                            <img src="./images/logo-2-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0" />
                         </a>
                     </li>
 
                     <li className="clients-item min-w-[50%] snap-start">
                         <a href="#">
-                            <img src="./images/logo-3-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0"/>
+                            <img src="./images/logo-3-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0" />
                         </a>
                     </li>
 
                     <li className="clients-item min-w-[50%] snap-start">
                         <a href="#">
-                            <img src="./images/logo-4-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0"/>
+                            <img src="./images/logo-4-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0" />
                         </a>
                     </li>
 
                     <li className="clients-item min-w-[50%] snap-start">
                         <a href="#">
-                            <img src="./images/logo-5-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0"/>
+                            <img src="./images/logo-5-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0" />
                         </a>
                     </li>
 
                     <li className="clients-item min-w-[50%] snap-start">
                         <a href="#">
-                            <img src="./images/logo-6-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0"/>
+                            <img src="./images/logo-6-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0" />
                         </a>
                     </li>
 
                 </ul>
 
+            </section> */}
+            <h3 className="h3 clientes-title mb-3.5">Clientes</h3>
+            <section className="clientes">
+                <div className="clientes-list">
+                    <img src="./images/logo-1-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
+                    <img src="./images/logo-2-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
+                    <img src="./images/logo-3-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
+                    <img src="./images/logo-4-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
+                    <img src="./images/logo-5-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
+                    <img src="./images/logo-6-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
+                    <img src="./images/logo-1-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
+                    <img src="./images/logo-2-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
+                    <img src="./images/logo-3-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
+                    <img src="./images/logo-4-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
+                    <img src="./images/logo-5-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
+                    <img src="./images/logo-6-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
+                </div>
             </section>
         </article>
+
     )
 }
