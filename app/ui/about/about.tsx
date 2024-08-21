@@ -287,18 +287,18 @@ export default function about() {
             <h3 className="h3 clientes-title mb-3.5">Clientes</h3>
             <section className="clientes">
                 <div className="clientes-list">
-                    <img src="./images/logo-1-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
-                    <img src="./images/logo-2-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
-                    <img src="./images/logo-3-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
-                    <img src="./images/logo-4-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
-                    <img src="./images/logo-5-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
-                    <img src="./images/logo-6-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
-                    <img src="./images/logo-1-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
-                    <img src="./images/logo-2-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
-                    <img src="./images/logo-3-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
-                    <img src="./images/logo-4-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
-                    <img src="./images/logo-5-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
-                    <img src="./images/logo-6-color.png" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear" />
+                    <img src="./images/bose.webp" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0" />
+                    <img src="./images/av.webp" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0" />
+                    <img src="./images/alejandra.webp" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0" />
+                    <img src="./images/ChocoIsa.webp" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0" />
+                    <img src="./images/bose.webp" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0" />
+                    <img src="./images/av.webp" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0" />
+                    <img src="./images/alejandra.webp" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0" />
+                    <img src="./images/ChocoIsa.webp" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0" />
+                    <img src="./images/bose.webp" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0" />
+                    <img src="./images/av.webp" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0" />
+                    <img src="./images/alejandra.webp" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0" />
+                    <img src="./images/ChocoIsa.webp" alt="client logo" className="w-full grayscale-[1] duration-[250ms] ease-linear hover:grayscale-0" />
                 </div>
             </section>
         </article>

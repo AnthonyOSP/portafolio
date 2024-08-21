@@ -10,8 +10,8 @@ export default function sidebar() {
             <aside className={styles.sidebar} data-sidebar>
                 <div className={styles.sidebarInfo}>
                     <figure className={styles.avatarBox}>
-                        <Image
-                            src="/images/dev-portafolio1.png"
+                        <img
+                            src="/images/dev-portafolio1.webp"
                             alt="Richard hanrick"
                             width="80"
                             height="70"
