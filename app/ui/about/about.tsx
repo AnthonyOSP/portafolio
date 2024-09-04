@@ -1,8 +1,12 @@
+"use client";
 
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
+import Testimonials from './modal';
+
 
 export default function about() {
+
     return (
         <article className="about  active " data-page="about"  >
 
@@ -117,13 +121,14 @@ export default function about() {
                 <p className='text-[#fafafa] flex gap-1 text-[12px] mt-[10px] justify-end'>* Iconos gracias a <a target="_blank" href="https://icons8.com" className='text-white'>Icons8</a></p>
             </section>
 
-            <section className="testimonials mb-[30px]">
+            {/* <section className="testimonials mb-[30px]">
 
                 <h3 className="h3 testimonials-title mb-[20px]">Testimonios</h3>
 
                 <ul className="testimonials-list has-scrollbar flex justify-start items-start gap-[15px] my-[0px] mx-[-15px] py-[25px] px-[15px] pb-[35px] overflow-x-auto	scroll-smooth overscroll-x-contain snap-mandatory">
 
                     <li className="testimonials-item min-w-[100%] snap-center">
+
                         <div className="content-card" data-testimonials-item>
 
                             <figure className="testimonials-avatar-box absolute top-0 left-0 -translate-y-[25px] translate-x-[15px] bg-gradient-to-br from-[#3f3f40] from-[3%* to-[#303030] to-97% rounded-[14px] shadow-[-4_8px_24px_0_rgba(0,0,0,0.251)] ">
@@ -140,7 +145,7 @@ export default function about() {
 
                             <div className="testimonials-text text-[#d6d6d6] text-[14px] font-300 leading-[1.6] line-clamp-4" data-testimonials-text>
                                 <p>
-                                    Anthony fue contratado para crear una identidad corporativa. Quedamos muy satisfechos con el trabajo realizado. Se preocupa mucho por las necesidades del cliente. 
+                                    Anthony fue contratado para crear una identidad corporativa. Quedamos muy satisfechos con el trabajo realizado. Se preocupa mucho por las necesidades del cliente.
                                 </p>
                             </div>
 
@@ -197,47 +202,13 @@ export default function about() {
 
                 </ul>
 
+            </section> */}
+            <section className="testimonials mb-[30px]">
+                <h3 className="h3 testimonials-title mb-[20px]">Testimonios</h3>
+                <Testimonials />
             </section>
 
-            <div className="modal-container fixed top-0 left-0 w-full h-full flex justify-center items-center overflow-y-auto overscroll-contain z-20 pointer-events-none invisible	" data-modal-container>
 
-                <div className="overlay fixed top-0 left-0 w-full h-screen bg-[0d0d0d] opacity-0 invisible pointer-events-none z-[1] duration-[250ms] ease-linear" data-overlay></div>
-
-                <section className="testimonials-modal bg-[#1e1e1f] relative p-[15px] my-[15px] mx-[12px] border-[1px] border-solid border-[#383838] rounded-[14px] shadow-[0_24px_80px_0px_rgba(0,0,0,0.25)] scale-125 opacity-[0] duration-500 ease-in-out z-[2]">
-
-                    <button className="modal-close-btn absolute top-[15px] right-[15px] bg-[#2b2b2c] rounded-[8px] w-[32px] h-[32px] flex content-center items-center text-[#fafafa] text-[18px] opacity-70 hover:opacity-100 focus:opacity-100" data-modal-close-btn>
-                        <XMarkIcon className="w-[50px]" />
-                    </button>
-
-                    <div className="modal-img-wrapper">
-                        <figure className="modal-avatar-box g-gradient-to-br from-[#3f3f40] to-3% to-[#303030] to-97% w-max rounded-[14px] mb-[15px] shadow-[0_16px_30px_rgba(0,0,0,0.25)] ">
-                            <img src="./images/avatar-1.png" alt="Daniel lewis" width="80" className="hidden" data-modal-img />
-                        </figure>
-
-                        <img src="./images/icon-quote.svg" alt="quote icon" className="hidden" />
-                    </div>
-
-                    <div className="modal-content">
-
-                        <h4 className="h3 modal-title mb-[4px]" data-modal-title>Daniel lewis</h4>
-
-                        <time dateTime="2021-06-14" className="text-[14px] text-[d6d6d6b3] font-300 mb-[10px]">14 June, 2021</time>
-
-                        <div data-modal-text>
-                            <p className="text-[#d6d6d6] text-[14px] font-300 leading-[1.6]">
-                                Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                                lot of experience
-                                and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                                consectetur adipiscing
-                                elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </section>
-
-            </div>
 
             {/* <section className="clients mb-[15px]">
 

@@ -307,24 +307,6 @@ article.active {
   z-index: 1; /* Asegura que el subrayado esté por encima de otros elementos */
 }
 
-.modal-container::-webkit-scrollbar {
-  display: none;
-}
-
-.modal-container.active {
-  pointer-events: all;
-  visibility: visible;
-}
-.overlay.active {
-  opacity: 0.8;
-  visibility: visible;
-  pointer-events: all;
-}
-
-.modal-container.active .testimonials-modal {
-  transform: scale(1);
-  opacity: 1;
-}
 
 /** RESUME **/
 
