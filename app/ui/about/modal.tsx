@@ -113,7 +113,7 @@ export default function Testimonials() {
             } */}
             <div className={`modal-container fixed inset-0 w-full h-full flex justify-center items-center overflow-y-auto z-[200] overscroll-contain ${isModalOpen ? 'visible pointer-events-auto' : 'invisible pointer-events-none'}`}>
                     <div className={`overlay fixed top-0 left-0 w-full h-screen bg-[#0d0d0d] transition-opacity ease duration-[400ms] ${isModalOpen ? 'opacity-80 visible pointer-events-auto' : 'opacity-0 invisible pointer-events-none'}`} onClick={closeModal}></div>
-                    <section className={`testimonials-modal bg-[#1e1e1f] relative p-[15px] m-[15px] mx-[12px] border border-solid border-[#383838] rounded-[14px] shadow-[0_24px_80px_0px_rgba(0,0,0,0.25)] transition-transform ease duration-[400ms] z-[2] ${isModalOpen ? 'scale-95 opacity-100' : 'scale-110 opacity-0'} max-w-[90vw] max-h-[90vh] overflow-auto`}>
+                    <section className={`testimonials-modal bg-[#1e1e1f] relative p-[15px] m-[15px] mx-[12px] border border-solid border-[#383838] rounded-[14px] shadow-[0_24px_80px_0px_rgba(0,0,0,0.25)] transition ease duration-[400ms] z-[2] ${isModalOpen ? 'scale-95 opacity-100' : 'scale-110 opacity-0'} max-w-[90vw] max-h-[90vh] overflow-auto`}>
                         <button onClick={closeModal} className="modal-close-btn absolute top-4 right-4 bg-[#2b2b2c] rounded-[8px] w-[32px] h-[32px] flex justify-center items-center text-[#fafafa] text-[18px] opacity-[0.7] hover:opacity-100 focus:opacity-100">
                             <XMarkIcon className='w-[25px]' />
                         </button>
