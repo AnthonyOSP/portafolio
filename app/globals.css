@@ -594,7 +594,6 @@ textarea.form-input::-webkit-resizer {
     align-items: stretch;
     gap: 25px;
     padding: 30px;
-    border-radius: 20px;
   }
 
   .modal-img-wrapper {

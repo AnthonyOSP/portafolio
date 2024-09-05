@@ -1,36 +1,44 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import {XMarkIcon} from '@heroicons/react/24/outline'
+import { XMarkIcon } from '@heroicons/react/24/outline'
+
+interface Testimonial {
+    avatar: string;
+    name: string;
+    title: string;
+    text: string;
+    datetime: string;
+}
 
 export default function Testimonials() {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedTestimonial, setSelectedTestimonial] = useState(null);
+    const [selectedTestimonial, setSelectedTestimonial] = useState<Testimonial | null>(null)
 
-    const testimonials = [
+    const testimonials: Testimonial[] = [
         {
             avatar: '/images/avatar-1.png',
             name: 'Gustavo Diaz',
             title: 'Bose Team Leader',
             text: 'Anthony fue contratado para crear una identidad corporativa. Quedamos muy satisfechos con el trabajo realizado. Se preocupa mucho por las necesidades del cliente.',
-            datetime:'14 June, 2021',
+            datetime: '14 June, 2021',
         },
         {
             avatar: '/images/avatar-4.png',
             name: 'Arturo Valle',
             title: 'AV Arquitectos',
             text: 'Nos ayudó a implementar nuestra página web y correos corporativos. Sus observaciones nos ayudaron a reducir costos y tiempo de proyectos. Diseñó el sistema de clientes y las aplicaciones que necesitábamos. Siempre puntual con las entregas. Estamos muy felices con su trabajo.',
-            datetime:'14 June, 2022',
+            datetime: '14 June, 2022',
         },
         {
             avatar: '/images/avatar-2.png',
             name: 'Alejandra Burgos',
             title: 'AlejandraStore',
             text: 'Diseñó y desarrolló la tienda que nos ayudó a incrementar nuestras ventas. Agradecida con todas las ideas innovadoras que tenía en mente. Siempre contamos con él para nuevos proyectos, su profesionalismo es indiscutible.',
-            datetime:'14 June, 2023',
+            datetime: '14 June, 2023',
         },
     ];
 
-    const openModal = (testimonial) => {
+    const openModal = (testimonial: Testimonial) => {
         setSelectedTestimonial(testimonial);
         setIsModalOpen(true);
     };
@@ -67,42 +75,73 @@ export default function Testimonials() {
                     </li>
                 ))}
             </ul>
-
             {/* Modal */}
-            {isModalOpen && selectedTestimonial && (
-                <div className="modal-container fixed inset-0 flex justify-center items-center overflow-y-auto z-[200] pointer-events-auto">
-                    <div className="overlay fixed top-0 left-0 w-full h-screen  bg-[#0d0d0d] opacity-[0.8] visible pointer-events-auto z-[1] transition duration-300 ease-linear" data-overlay>
-                        <section className="testimonials-modal bg-[#1e1e1f] relative p-[15px] border border-solid border-[#383838] rounded-[14px] shadow-[0_24px_80px_0px_rgba(0,0,0,0.25)] transition duration-300 ease-linear z-[2] scale-100 max-w-[90vw] max-h-[90vh] overflow-auto ">
-                            <button onClick={closeModal} className="modal-close-btn absolute top-4 right-4 bg-[#2b2b2c] rounded-[8px] w-[32px] h-[32px] flex justify-center items-center text-[#fafafa] text-[18px] opacity-[0.7] hover:opacity-100 focus:opacity-100">
-                                <XMarkIcon className='w-[25px]'/>
-                            </button>
-                            <div className='modal-img-wrapper flex flex-col items-center'>
-                                <figure className="modal-avatar-box g-gradient-to-br from-[#3f3f40] to-3% to-[#303030] to-97% w-max rounded-[14px] mb-[15px] shadow-[0_16px_30px_rgba(0,0,0,0.25)">
-                                    <img
-                                        src={selectedTestimonial.avatar}
-                                        alt={selectedTestimonial.name}
+            {/* {isModalOpen && selectedTestimonial && (
+                <div className="modal-container fixed inset-0 flex justify-center items-center overflow-y-auto z-[200] pointer-events-auto" onClick={closeModal}>
+                    <div className={`overlay fixed top-0 left-0 w-full h-screen bg-[#0d0d0d] ${isModalOpen ? 'opacity-80' : 'opacity-0'} transition-opacity ease duration-250 `} data-overlay></div>
+                    <section className={`testimonials-modal bg-[#1e1e1f] relative p-[15px] border border-solid border-[#383838] rounded-[14px] shadow-[0_24px_80px_0px_rgba(0,0,0,0.25)] transition-all ease duration-250 z-[2] ${isModalOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0'} max-w-[90vw] max-h-[90vh] overflow-auto`}>
+                        <button onClick={closeModal} className="modal-close-btn absolute top-4 right-4 bg-[#2b2b2c] rounded-[8px] w-[32px] h-[32px] flex justify-center items-center text-[#fafafa] text-[18px] opacity-[0.7] hover:opacity-100 focus:opacity-100">
+                            <XMarkIcon className='w-[25px]' />
+                        </button>
+                        <div className='modal-img-wrapper flex flex-col items-center'>
+                            <figure className="modal-avatar-box bg-gradient-to-br from-[#3f3f40] to-3% to-[#303030] to-97% w-max rounded-[14px] mb-[15px] shadow-[0_16px_30px_rgba(0,0,0,0.25)">
+                                <img
+                                    src={selectedTestimonial.avatar}
+                                    alt={selectedTestimonial.name}
 
-                                        className='w-[65px]'
-                                        data-testimonials-avatar
-                                    />
-                                </figure>
-                                <img src="../../../public/images/icon-quote.svg" alt="quote icon" className='block grow w-[35px]' />
+                                    className='w-[65px]'
+                                    data-testimonials-avatar
+                                />
+                            </figure>
+                            <img src="./images/icon-quote.svg" alt="quote icon" className='block grow w-[35px]' />
+                        </div>
+                        <div className="modal-content">
+                            <h4 className="h4 testimonials-item-title mb-[4px]" data-testimonials-title>
+                                {selectedTestimonial.name} - {selectedTestimonial.title}
+                            </h4>
+                            <time className='text-[14px] text-[#d6d6d6b3] font-light mb-[10px]'>{selectedTestimonial.datetime}</time>
+
+                            <div className="data-modal-text" data-testimonials-text>
+                                <p className='text-[#d6d6d6] text-[14px] font-300 leading-[1.6]'>{selectedTestimonial.text}</p>
                             </div>
-                            <div className="modal-content">
-                                <h4 className="h4 testimonials-item-title mb-[4px]" data-testimonials-title>
-                                    {selectedTestimonial.name} - {selectedTestimonial.title}
-                                </h4>
-                                <time className='text-[14px] text-[#d6d6d6b3] font-light mb-[10px]'>{selectedTestimonial.datetime}</time>
+                        </div>
 
-                                <div className="data-modal-text" data-testimonials-text>
-                                    <p className='text-[#d6d6d6] text-[14px] font-300 leading-[1.6]'>{selectedTestimonial.text}</p>
-                                </div>
+                    </section >
+                </div >
+                
+            )
+            } */}
+            <div className={`modal-container fixed inset-0 w-full h-full flex justify-center items-center overflow-y-auto z-[200] overscroll-contain ${isModalOpen ? 'visible pointer-events-auto' : 'invisible pointer-events-none'}`}>
+                    <div className={`overlay fixed top-0 left-0 w-full h-screen bg-[#0d0d0d] transition-opacity ease duration-[400ms] ${isModalOpen ? 'opacity-80 visible pointer-events-auto' : 'opacity-0 invisible pointer-events-none'}`} onClick={closeModal}></div>
+                    <section className={`testimonials-modal bg-[#1e1e1f] relative p-[15px] m-[15px] mx-[12px] border border-solid border-[#383838] rounded-[14px] shadow-[0_24px_80px_0px_rgba(0,0,0,0.25)] transition-transform ease duration-[400ms] z-[2] ${isModalOpen ? 'scale-95 opacity-100' : 'scale-110 opacity-0'} max-w-[90vw] max-h-[90vh] overflow-auto`}>
+                        <button onClick={closeModal} className="modal-close-btn absolute top-4 right-4 bg-[#2b2b2c] rounded-[8px] w-[32px] h-[32px] flex justify-center items-center text-[#fafafa] text-[18px] opacity-[0.7] hover:opacity-100 focus:opacity-100">
+                            <XMarkIcon className='w-[25px]' />
+                        </button>
+                        <div className='modal-img-wrapper flex flex-col items-center'>
+                            <figure className="modal-avatar-box bg-gradient-to-br from-[#3f3f40] to-3% to-[#303030] to-97% w-max rounded-[14px] mb-[15px] shadow-[0_16px_30px_rgba(0,0,0,0.25)">
+                                <img
+                                    src={selectedTestimonial?.avatar}
+                                    alt={selectedTestimonial?.name}
+
+                                    className='w-[65px]'
+                                    data-testimonials-avatar
+                                />
+                            </figure>
+                            <img src="./images/icon-quote.svg" alt="quote icon" className='block grow w-[35px]' />
+                        </div>
+                        <div className="modal-content">
+                            <h4 className="h4 testimonials-item-title mb-[4px]" data-testimonials-title>
+                                {selectedTestimonial?.name} - {selectedTestimonial?.title}
+                            </h4>
+                            <time className='text-[14px] text-[#d6d6d6b3] font-light mb-[10px]'>{selectedTestimonial?.datetime}</time>
+
+                            <div className="data-modal-text" data-testimonials-text>
+                                <p className='text-[#d6d6d6] text-[14px] font-300 leading-[1.6]'>{selectedTestimonial?.text}</p>
                             </div>
+                        </div>
 
-                        </section>
-                    </div>
-                </div>
-            )}
+                    </section >
+                </div >
         </>
     );
 }

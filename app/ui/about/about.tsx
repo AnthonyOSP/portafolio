@@ -12,6 +12,7 @@ export default function about() {
 
             <header>
                 <h2 className="h2 article-title mb-3.5">¿Quien Soy? </h2>
+                
             </header>
 
             <section className="about-text text-[#D6D6D6] text-[14px] font-light leading-[1.6rem]">
