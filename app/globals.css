@@ -342,26 +342,33 @@ article.active {
 }
 
 /**PORTFOLIO**/
-.filter-select.active .select-icon { transform: rotate(0.5turn); }
-
-.filter-select.active + .select-list {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
+.project-item  {
+  animation: scaleUp 0.25s ease forwards;
 }
 
-.select-item button {
-  background: var(--eerie-black-2);
-  color: var(--light-gray);
-  font-size: var(--fs-6);
-  font-weight: var(--fw-300);
-  text-transform: capitalize;
+@keyframes scaleUp {
+  0% { transform: scale(0.5); }
+  100% { transform: scale(1); }
+}
+
+.project-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 8px 10px;
-  border-radius: 8px;
+  height: 100%;
+  background: transparent;
+  z-index: 1;
+  transition: var(--transition-1);
 }
 
-.select-item button:hover { --eerie-black-2: hsl(240, 2%, 20%); }
+.project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
+.project-item > a:hover img { transform: scale(1.1); }
+.project-item > a:hover .project-item-icon-box {
+  --scale: 1;
+  opacity: 1;
+}
 
 /**CONTACT**/
 textarea.form-input::-webkit-resizer {
