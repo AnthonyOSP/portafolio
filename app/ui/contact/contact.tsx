@@ -1,7 +1,115 @@
+'use client';
+import * as React from 'react';
+import { useState } from 'react';
 import { FaRegPaperPlane } from "react-icons/fa";
+import CircularProgress from '@mui/material/CircularProgress';
+
+const ContactForm = () => {
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email: '',
+        message: ''
+    });
+
+    const [validate, setValidate] = useState({
+        fullName: '',
+        email: ''
+    });
 
 
-export default function contact() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+
+        if ((name === 'fullName') && value.length >= 30) {
+            setValidate({
+                ...validate,
+                [name]: 'Has alcanzado el límite de 30 caracteres'
+            });
+            return;
+        } else {
+            setValidate({
+                ...validate,
+                [name]: ''
+            });
+        }
+
+        if (name === 'email') {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(value)) {
+                setValidate({
+                    ...validate,
+                    email: 'El formato del correo electrónico no es válido'
+                });
+            } else {
+                setValidate({
+                    ...validate,
+                    email: ''
+                });
+            }
+        }
+
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.email)) {
+            setValidate({
+                ...validate,
+                email: 'El formato del correo electrónico no es válido'
+            });
+            return;
+        }
+
+        setIsLoading(true);
+
+        try {
+            const response = await fetch('/api/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                setIsModalOpen(true);
+                setFormData({
+                    fullName: '',
+                    email: '',
+                    message: ''
+                });
+                setValidate({
+                    fullName: '',
+                    email: ''
+                });
+            } else {
+                alert('Error al enviar el mensaje');
+            }
+        } catch (error) {
+            setIsLoading(false);
+            console.error('Error al enviar el mensaje:', error);
+            alert('Error al enviar el mensaje');
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
+    const isFormValid = formData.fullName && formData.email && formData.message && !validate.email;;
+
     return (
         <article className="contact active" data-page="contact">
 
@@ -19,22 +127,89 @@ export default function contact() {
 
                 <h3 className="h3 form-title mb-5">Enviame un mensaje</h3>
 
-                <form action="#" className="form" data-form>
+                <form onSubmit={handleSubmit} className="form" data-form>
 
                     <div className="input-wrapper grid grid-cols-1 gap-[25px] mb-[25px] ">
-                        <input type="text" name="fullname" className="form-input text-[#fafafa] text-[14px] font-normal py-[13px] px-5 border border-solid border-[#383838] rounded-[14px] outline-none placeholder:font-medium focus:border-[#ffdb70]" placeholder="Nombre Completo" required data-form-input />
+                        <div>
+                            <input
+                                type="text"
+                                name="fullName"
+                                className="form-input text-[#fafafa] text-[14px] font-normal py-[13px] px-5 border border-solid border-[#383838] rounded-[14px] outline-none placeholder:font-medium focus:border-[#ffdb70]"
+                                placeholder="Nombre Completo"
+                                required
+                                maxLength={30}
+                                data-form-input
+                                value={formData.fullName}
+                                onChange={handleChange}
+                            />
+                            {validate.fullName && <p className="text-red-500 text-sm">{validate.fullName}</p>}
+                        </div>
 
-                        <input type="email" name="email" className="form-input text-[#fafafa] text-[14px] font-normal py-[13px] px-5 border border-solid border-[#383838] rounded-[14px] outline-none placeholder:font-medium focus:border-[#ffdb70]" placeholder="Email" required data-form-input />
+                        <div>
+                            <input
+                                type="email"
+                                name="email"
+                                className="form-input text-[#fafafa] text-[14px] font-normal py-[13px] px-5 border border-solid border-[#383838] rounded-[14px] outline-none placeholder:font-medium focus:border-[#ffdb70]"
+                                placeholder="Email"
+                                required
+                                maxLength={50}
+                                data-form-input
+                                value={formData.email}
+                                onChange={handleChange}
+                            />
+                            {validate.email && <p className="text-red-500 text-sm">{validate.email}</p>}
+                        </div>
                     </div>
 
-                    <textarea name="message" className="form-input text-[#fafafa] text-[14px] font-normal py-[13px] px-5 border border-solid border-[#383838] rounded-[14px] outline-none min-h-[100px] h-[120px] max-h-[200px] resize-y mb-[25px] placeholder:font-medium  focus:border-[#ffdb70]" placeholder="Tu mensaje" required data-form-input></textarea>
+                    <textarea
+                        name="message"
+                        className="form-input text-[#fafafa] text-[14px] font-normal py-[13px] px-5 border border-solid border-[#383838] rounded-[14px] outline-none min-h-[100px] h-[120px] max-h-[200px] resize-y mb-[25px] placeholder:font-medium  focus:border-[#ffdb70]"
+                        placeholder="Tu mensaje"
+                        required
+                        data-form-input
+                        value={formData.message}
+                        onChange={handleChange}
+                    />
 
-                    <button className="form-btn relative w-full bg-gradient-to-br from-[#404040] from-10% to-[#40404000] to-50% text-[#ffdb70] flex justify-center items-center gap-[10px] py-[13px] px-[20px] rounded-[14px] text-[14px] capitalize shadow-custom-shadow-3 z-[1] duration-300 ease-in" type="submit" disabled data-form-btn>
-                        <FaRegPaperPlane className='w-[16px]'/>
+                    <button
+                        className="form-btn relative w-full bg-gradient-to-br from-[#404040] from-10% to-[#40404000] to-50% text-[#ffdb70] flex justify-center items-center gap-[10px] py-[13px] px-[20px] rounded-[14px] text-[14px] capitalize shadow-custom-shadow-3 z-[1] duration-300 ease-in"
+                        type="submit"
+                        disabled={!isFormValid}
+                        data-form-btn>
+                        <FaRegPaperPlane className='w-[16px]' />
                         <span className='font-semibold'>Send Message</span>
                     </button>
 
                 </form>
+
+                {isLoading && (
+                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                        <React.Fragment>
+                            <svg width={0} height={0}>
+                                <defs>
+                                    <linearGradient id="my_gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stopColor="#e01cd5" />
+                                        <stop offset="100%" stopColor="#1CB5E0" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <CircularProgress sx={{ 'svg circle': { stroke: 'url(#my_gradient)' } }} />
+                        </React.Fragment>
+
+                    </div>
+                )}
+
+                {isModalOpen && (
+                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                        <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col">
+                            <span className="absolute top-2 right-2 text-gray-500 cursor-pointer" onClick={closeModal}>&times;</span>
+                            <p>Mensaje enviado con éxito!</p>
+                            <button className="flex content-center items-center mt-4 px-4 py-2 bg-blue-500 text-white rounded" onClick={closeModal}>OK</button>
+                        </div>
+                    </div>
+                )}
+
+
 
             </section>
 
@@ -42,3 +217,4 @@ export default function contact() {
 
     )
 }
+export default ContactForm;

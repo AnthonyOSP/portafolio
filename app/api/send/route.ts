@@ -1,15 +1,18 @@
 import { EmailTemplate } from '../../ui/contact/email-template';
 import { Resend } from 'resend';
 
-const resend = new Resend("re_fqLJaNxZ_PfMK1TPbhRmFQXnB9djxSHjY");
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST() {
+export async function POST(request: Request) {
   try {
+    const formData = await request.json();
+    const { fullName, email, message } = formData;
+
     const { data, error } = await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>',
+      from: 'Portfolio ASP <onboarding@resend.dev>',
       to: ['anthonysaa93@gmail.com'],
-      subject: 'Hello world',
-      react: EmailTemplate({ firstName: 'John' }),
+      subject: `Nuevo mensaje de ${fullName}`,
+      react: EmailTemplate({ fullName, email, message }),
     });
 
     if (error) {
