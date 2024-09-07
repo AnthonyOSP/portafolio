@@ -1,7 +1,14 @@
 import { EmailTemplate } from '../../ui/contact/email-template';
 import { Resend } from 'resend';
+// Asegúrate de que estás usando la variable de entorno correctamente
+const apiKey = process.env.API_KEY;
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+if (!apiKey) {
+    throw new Error("Missing API key. Pass it to the constructor `new Resend(\"re_123\")`");
+}
+
+// Usa la clave API en tu constructor o donde sea necesario
+const resend = new Resend(apiKey);
 
 export async function POST(request: Request) {
   try {
