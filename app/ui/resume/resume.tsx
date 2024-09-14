@@ -1,190 +1,222 @@
-import { BookOpenIcon } from '@heroicons/react/24/outline'
+import { BookOpenIcon } from "@heroicons/react/24/outline";
 
 export default function resume() {
   return (
     <article className="resume active" data-page="resume">
+      <header>
+        <h2 className="h2 article-title mb-3.5">Resumen</h2>
+      </header>
 
-        <header>
-          <h2 className="h2 article-title mb-3.5">Resumen</h2>
-        </header>
-
-        <section className="timeline mb-8">
-
-          <div className="title-wrapper flex items-center gap-[15px] mb-[25px]">
-            <div className="icon-box relative bg-gradient-to-br from-[#404040] from-10% to-[#40404000] to-50% w-[35px] h-[35px] rounded-[8px] flex justify-center items-center text-[16px] shadow-custom-shadow z-[1] ">
-              <BookOpenIcon className='w-[20px] text-[#0066ff]' />
-            </div>
-
-            <h3 className="h3">Educación</h3>
+      <section className="timeline mb-8">
+        <div className="title-wrapper flex items-center gap-[15px] mb-[25px]">
+          <div className="icon-box relative bg-gradient-to-br from-[#404040] from-10% to-[#40404000] to-50% w-[35px] h-[35px] rounded-[8px] flex justify-center items-center text-[16px] shadow-custom-shadow z-[1] ">
+            <BookOpenIcon className="w-[20px] text-[#0066ff]" />
           </div>
 
-          <ol className="timeline-list text-[14px] ml-[45px]">
+          <h3 className="h3">Educación</h3>
+        </div>
 
-            <li className="timeline-item relative mb-[20px]">
+        <ol className="timeline-list text-[14px] ml-[45px]">
+          <li className="timeline-item relative mb-[20px]">
+            <h4 className="h4 timeline-item-title text-sm mb-[7px]">
+              Plataformas Online
+            </h4>
 
-              <h4 className="h4 timeline-item-title text-sm mb-[7px]">University school of the arts</h4>
+            <span className="text-[#0060AA] font-normal leading-relaxed">
+              2020 — Actualidad
+            </span>
 
-              <span className='text-[#0060AA] font-normal leading-relaxed'>2007 — 2008</span>
+            <p className="timeline-text text-[#d6d6d6] font-light leading-relaxed">
+              Cursos de desarrollo front y backend en
+              <strong className="font-extrabold"> Platzy</strong>,
+              <strong className="font-extrabold"> CodigoFacilito</strong> y
+              <strong className="font-extrabold"> Udemy</strong>.
+            </p>
+          </li>
 
-              <p className="timeline-text text-[#d6d6d6] font-light leading-relaxed">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
-              </p>
+          <li className="timeline-item relative mb-[20px]">
+            <h4 className="h4 timeline-item-title text-sm mb-[7px]">
+              Universidad de San Martin De Porres
+            </h4>
 
-            </li>
+            <span className="text-[#0060AA] font-normal leading-relaxed">
+              2015 — Actualidad
+            </span>
 
-            <li className="timeline-item relative mb-[20px]">
+            <p className="timeline-text text-[#d6d6d6] font-light leading-relaxed">
+              Carrera de ingenieria de sistemas y software, para la creación de
+              aplicación modernas.
+            </p>
+          </li>
 
-              <h4 className="h4 timeline-item-title text-sm mb-[7px]">New york academy of art</h4>
+          <li className="timeline-item relative mb-[20px]">
+            <h4 className="h4 timeline-item-title text-sm mb-[7px]">
+              Instituto Cultural Peruano Norteamericano
+            </h4>
 
-              <span className='text-[#0060AA] font-normal leading-relaxed'>2006 — 2007</span>
+            <span className="text-[#0060AA] font-normal leading-relaxed">
+              2010 — 2015
+            </span>
 
-              <p className="timeline-text text-[#d6d6d6] font-light leading-relaxed">
-                Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est
-                omnis..
-              </p>
+            <p className="timeline-text text-[#d6d6d6] font-light leading-relaxed">
+              Cursos de inglés avanzado.
+            </p>
+          </li>
 
-            </li>
+          <li className="timeline-item relative">
+            <h4 className="h4 timeline-item-title text-sm mb-[7px]">
+              Universidad Privada TELESUP
+            </h4>
 
-            <li className="timeline-item relative">
+            <span className="text-[#0060AA] font-normal leading-relaxed">
+              2010 — 2014
+            </span>
 
-              <h4 className="h4 timeline-item-title text-sm mb-[7px]">High school of art and design</h4>
+            <p className="timeline-text text-[#d6d6d6] font-light leading-relaxed">
+              Cursos de informatica, con especialidad en desarrollo de software.
+            </p>
+          </li>
+        </ol>
+      </section>
 
-              <span className='text-[#0060AA] font-normal leading-relaxed'>2002 — 2004</span>
-
-              <p className="timeline-text text-[#d6d6d6] font-light leading-relaxed">
-                Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur
-                magni dolores
-                eos.
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section className="timeline mb-8">
-
-          <div className="title-wrapper flex items-center gap-[15px] mb-[25px]">
-            <div className="icon-box relative bg-gradient-to-br from-[#404040] from-10% to-[#40404000] to-50% w-[35px] h-[35px] rounded-[8px] flex justify-center items-center text-[16px] text-[#0066ff] shadow-custom-shadow z-[1]">
-              <BookOpenIcon className='w-[20px]' />
-            </div>
-
-            <h3 className="h3">Experiencia Laboral</h3>
+      <section className="timeline mb-8">
+        <div className="title-wrapper flex items-center gap-[15px] mb-[25px]">
+          <div className="icon-box relative bg-gradient-to-br from-[#404040] from-10% to-[#40404000] to-50% w-[35px] h-[35px] rounded-[8px] flex justify-center items-center text-[16px] text-[#0066ff] shadow-custom-shadow z-[1]">
+            <BookOpenIcon className="w-[20px]" />
           </div>
 
-          <ol className="timeline-list text-[14px] ml-[45px]">
+          <h3 className="h3">Experiencia Laboral</h3>
+        </div>
 
-            <li className="timeline-item relative mb-[20px]">
+        <ol className="timeline-list text-[14px] ml-[45px]">
+          <li className="timeline-item relative mb-[20px]">
+            <div className="namework flex gap-3">
+              <h4 className="h4 timeline-item-title text-sm mb-[7px]">
+                AV Arquitectos
+              </h4>
+              <span className="text-[#b3b3b3]">Asistente de Sistemas, Ica</span>
+            </div>
+            <span className="text-[#0060AA] font-normal leading-relaxed">
+              2022 — Actualidad
+            </span>
 
-              <h4 className="h4 timeline-item-title text-sm mb-[7px]">Creative director</h4>
+            <ul className="timeline-text text-[#d6d6d6] font-light leading-relaxed">
+              <li>•Desarrollo de aplicaciones web (Html, JS, React) </li>
+              <li>•Supervisión de la página web y correos coorporativos </li>
+              <li>•Instalación de software </li>
+              <li>• Inventario de equipos adquiridos por la empresa</li>
+            </ul>
+          </li>
 
-              <span className='text-[#0060AA] font-normal leading-relaxed'>2015 — Present</span>
+          <li className="timeline-item relative mb-[20px]">
+            <div className="namework flex gap-3">
+              <h4 className="h4 timeline-item-title text-sm mb-[7px]">
+                WEBHELP
+              </h4>
+              <span className="text-[#b3b3b3]">Agente, Lima</span>
+            </div>
 
-              <p className="timeline-text text-[#d6d6d6] font-light leading-relaxed">
-                Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas
-                molestias
-                exceptur.
-              </p>
+            <span className="text-[#0060AA] font-normal leading-relaxed">
+              2020 — 2024
+            </span>
+            <ul className="timeline-text text-[#d6d6d6] font-light leading-relaxed">
+              <li>•Asistente técnico bilingüe en BOSE para USA y LATAM </li>
+              <li>•Solución de problemas </li>
+              <li>•Desarrollo de aplicativo Web (React)</li>
+            </ul>
+          </li>
 
-            </li>
+          <li className="timeline-item relative">
+            <div className="namework flex gap-3">
+              <h4 className="h4 timeline-item-title text-sm mb-[7px]">
+                LosTampato
+              </h4>
+              <span className="text-[#b3b3b3]">Soporte TI , Lima</span>
+            </div>
 
-            <li className="timeline-item relative mb-[20px]">
+            <span className="text-[#0060AA] font-normal leading-relaxed">
+              2016 — 2018
+            </span>
 
-              <h4 className="h4 timeline-item-title text-sm mb-[7px]">Art director</h4>
+            <ul className="timeline-text text-[#d6d6d6] font-light leading-relaxed ">
+              <li>•Asistente del área de sistemas </li>
+              <li>•Revisión de inventario</li>
+              <li>•Propuestas de adquisiciones de nuevo hardware</li>
+              <li>•Revisión de redes</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
 
-              <span className='text-[#0060AA] font-normal leading-relaxed'>2013 — 2015</span>
+      <section className="skill">
+        <h3 className="h3 skills-title mb-5">Skills</h3>
 
-              <p className="timeline-text text-[#d6d6d6] font-light leading-relaxed">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
-              </p>
+        <ul className="skills-list content-card p-5">
+          <li className="skills-item mb-4">
+            <div className="title-wrapper flex items-center gap-5 mb-[8px]">
+              <h5 className="h5">Diseño Web</h5>
+              <data
+                className="text-[#d6d6d6] text-[13px] font-light"
+                value="80"
+              >
+                80%
+              </data>
+            </div>
 
-            </li>
+            <div className="skill-progress-bg bg-[#383838] w-full h-2 rounded-[10px]">
+              <div className="skill-progress-fill w-4/5 h-full inherit-border-radius bg-gradient-to-r from-cyan-500 to-blue-500"></div>
+            </div>
+          </li>
 
-            <li className="timeline-item relative">
+          <li className="skills-item mb-4">
+            <div className="title-wrapper flex items-center gap-5 mb-[8px]">
+              <h5 className="h5">Aplicaciones Web</h5>
+              <data
+                className="text-[#d6d6d6] text-[13px] font-light"
+                value="70"
+              >
+                70%
+              </data>
+            </div>
 
-              <h4 className="h4 timeline-item-title text-sm mb-[7px]">Web designer</h4>
+            <div className="skill-progress-bg bg-[#383838] w-full h-2 rounded-[10px]">
+              <div className="skill-progress-fill w-[70%] h-full inherit-border-radius bg-gradient-to-r from-cyan-500 to-blue-500"></div>
+            </div>
+          </li>
 
-              <span className='text-[#0060AA] font-normal leading-relaxed'>2010 — 2013</span>
+          <li className="skills-item mb-4">
+            <div className="title-wrapper flex items-center gap-5 mb-[8px]">
+              <h5 className="h5">Front-End</h5>
+              <data
+                className="text-[#d6d6d6] text-[13px] font-light"
+                value="90"
+              >
+                90%
+              </data>
+            </div>
 
-              <p className="timeline-text text-[#d6d6d6] font-light leading-relaxed">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
-              </p>
+            <div className="skill-progress-bg bg-[#383838] w-full h-2 rounded-[10px]">
+              <div className="skill-progress-fill w-[90%] h-full inherit-border-radius bg-gradient-to-r from-cyan-500 to-blue-500"></div>
+            </div>
+          </li>
 
-            </li>
+          <li className="skills-item">
+            <div className="title-wrapper flex items-center gap-5 mb-[8px]">
+              <h5 className="h5">Back-End</h5>
+              <data
+                className="text-[#d6d6d6] text-[13px] font-light"
+                value="50"
+              >
+                50%
+              </data>
+            </div>
 
-          </ol>
-
-        </section>
-
-        <section className="skill">
-
-          <h3 className="h3 skills-title mb-5">Skills</h3>
-
-          <ul className="skills-list content-card p-5">
-
-            <li className="skills-item mb-4">
-
-              <div className="title-wrapper flex items-center gap-5 mb-[8px]">
-                <h5 className="h5">Web design</h5>
-                <data className='text-[#d6d6d6] text-[13px] font-light' value="80">80%</data>
-              </div>
-
-              <div className="skill-progress-bg bg-[#383838] w-full h-2 rounded-[10px]">
-                <div className="skill-progress-fill w-4/5 h-full inherit-border-radius bg-gradient-to-r from-cyan-500 to-blue-500"></div>
-              </div>
-
-            </li>
-
-            <li className="skills-item mb-4">
-
-              <div className="title-wrapper flex items-center gap-5 mb-[8px]">
-                <h5 className="h5">Graphic design</h5>
-                <data className='text-[#d6d6d6] text-[13px] font-light' value="70">70%</data>
-              </div>
-
-              <div className="skill-progress-bg bg-[#383838] w-full h-2 rounded-[10px]">
-                <div className="skill-progress-fill w-[70%] h-full inherit-border-radius bg-gradient-to-r from-cyan-500 to-blue-500"></div>
-              </div>
-
-            </li>
-
-            <li className="skills-item mb-4">
-
-              <div className="title-wrapper flex items-center gap-5 mb-[8px]">
-                <h5 className="h5">Branding</h5>
-                <data className='text-[#d6d6d6] text-[13px] font-light' value="90">90%</data>
-              </div>
-
-              <div className="skill-progress-bg bg-[#383838] w-full h-2 rounded-[10px]">
-                <div className="skill-progress-fill w-[90%] h-full inherit-border-radius bg-gradient-to-r from-cyan-500 to-blue-500"></div>
-              </div>
-
-            </li>
-
-            <li className="skills-item">
-
-              <div className="title-wrapper flex items-center gap-5 mb-[8px]">
-                <h5 className="h5">WordPress</h5>
-                <data className='text-[#d6d6d6] text-[13px] font-light' value="50">50%</data>
-              </div>
-
-              <div className="skill-progress-bg bg-[#383838] w-full h-2 rounded-[10px]">
-                <div className="skill-progress-fill w-1/2 h-full inherit-border-radius bg-gradient-to-r from-cyan-500 to-blue-500"></div>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-  )
+            <div className="skill-progress-bg bg-[#383838] w-full h-2 rounded-[10px]">
+              <div className="skill-progress-fill w-1/2 h-full inherit-border-radius bg-gradient-to-r from-cyan-500 to-blue-500"></div>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </article>
+  );
 }
