@@ -1,13 +1,20 @@
-import Image from "next/image"
+'use client'
+import React, { useState } from 'react';
 import styles from './sidebar.module.css'
 import { ChevronDownIcon, EnvelopeIcon, DevicePhoneMobileIcon, CalendarDaysIcon, MapPinIcon } from '@heroicons/react/24/outline'
 import { FaGithub } from "react-icons/fa";
 
 
 export default function sidebar() {
+
+    const [isActive, setIsActive] = useState(false);
+    const handleToggle = () => {
+        setIsActive(!isActive);
+      };
+
     return (
         <>
-            <aside className={styles.sidebar} data-sidebar>
+            <aside className={`${styles.sidebar} ${isActive ? styles.active : ''}`} data-sidebar>
                 <div className={styles.sidebarInfo}>
                     <figure className={styles.avatarBox}>
                         <img
@@ -26,7 +33,7 @@ export default function sidebar() {
                         <p className={styles.title}>Web developer</p>
                     </div>
 
-                    <button className={styles.infoMoreBtn} data-sidebar-btn>
+                    <button id="infoMoreBtn" className={styles.infoMoreBtn} onClick={handleToggle} data-sidebar-btn>
                         <span>Show Contacts</span>
                         <ChevronDownIcon className="size-3" />
                     </button>

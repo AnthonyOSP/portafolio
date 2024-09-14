@@ -3,6 +3,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { FaRegPaperPlane } from "react-icons/fa";
 import CircularProgress from '@mui/material/CircularProgress';
+import ModalContacto from './modalContacto'
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -200,13 +201,7 @@ const ContactForm = () => {
                 )}
 
                 {isModalOpen && (
-                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                        <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col">
-                            <span className="absolute top-2 right-2 text-gray-500 cursor-pointer" onClick={closeModal}>&times;</span>
-                            <p>Mensaje enviado con éxito!</p>
-                            <button className="flex content-center items-center mt-4 px-4 py-2 bg-blue-500 text-white rounded" onClick={closeModal}>OK</button>
-                        </div>
-                    </div>
+                    <ModalContacto isOpen={isModalOpen} onClose={closeModal} message="Mensaje enviado con éxito!" />
                 )}
 
 
