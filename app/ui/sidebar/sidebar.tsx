@@ -5,7 +5,7 @@ import { ChevronDownIcon, EnvelopeIcon, DevicePhoneMobileIcon, CalendarDaysIcon,
 import { FaGithub } from "react-icons/fa";
 
 
-export default function sidebar() {
+export default function Sidebar() {
 
     const [isActive, setIsActive] = useState(false);
     const handleToggle = () => {
